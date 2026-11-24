@@ -17,7 +17,7 @@ x-logging: &logging
 
 services:
   app:
-    image: ghcr.io/indalo-tech/yougile-mcp-cloud:${IMAGE_TAG:?set IMAGE_TAG in .env}
+    image: ghcr.io/pxall/yougile-mcp-cloud:${IMAGE_TAG:?set IMAGE_TAG in .env}
     env_file: .env
     environment:
       DATABASE_URL: postgresql://yougile:${POSTGRES_PASSWORD:?}@postgres:5432/yougile
@@ -48,7 +48,7 @@ services:
   # YouGile webhooks at /tickets/hook/… (Caddy proxies that path here). Without
   # TICKETS_BOT_TOKEN in .env it idles, healthy.
   tickets:
-    image: ghcr.io/indalo-tech/yougile-mcp-cloud:${IMAGE_TAG:?set IMAGE_TAG in .env}
+    image: ghcr.io/pxall/yougile-mcp-cloud:${IMAGE_TAG:?set IMAGE_TAG in .env}
     command: ["yougile-cloud", "tickets", "serve"]
     env_file: .env
     environment:
