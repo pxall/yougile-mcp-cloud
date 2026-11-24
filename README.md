@@ -1,9 +1,9 @@
 # YouGile MCP Cloud
 
-[![CI](https://github.com/indalo-tech/yougile-mcp-cloud/actions/workflows/ci.yml/badge.svg)](https://github.com/indalo-tech/yougile-mcp-cloud/actions/workflows/ci.yml)
+[![CI](https://github.com/pxall/yougile-mcp-cloud/actions/workflows/ci.yml/badge.svg)](https://github.com/pxall/yougile-mcp-cloud/actions/workflows/ci.yml)
 [![License: AGPL-3.0](https://img.shields.io/badge/license-AGPL--3.0-blue)](LICENSE)
 
-Серверный вариант [YouGile MCP](https://github.com/indalo-tech/yougile-mcp): подключение
+Серверный вариант [YouGile MCP](https://github.com/pxall/yougile-mcp): подключение
 по адресу, без установки. Человек входит своим логином YouGile, сервер выпускает ему отдельный
 ключ и работает с его правами. Инструменты, права и лимиты — из ядра
 [`yougile-mcp`](https://pypi.org/project/yougile-mcp/) с PyPI.
@@ -144,7 +144,7 @@ yougile-cloud tickets block <telegram id>  # как 🚫 в боте, но бе�
 
 ## Развёртывание
 
-Образ `ghcr.io/indalo-tech/yougile-mcp-cloud` (публичный) собирает CI на каждый коммит в
+Образ `ghcr.io/pxall/yougile-mcp-cloud` (публичный) собирает CI на каждый коммит в
 `main`: тег `sha-<коммит>` и `latest`. На сервере — Docker Compose из [`deploy/`](deploy):
 приложение, PostgreSQL 18 и Valkey 9.2 во внутренней сети; наружу только приложение и только
 на `127.0.0.1:8100`, TLS и лимиты по IP — у Caddy хоста. Подробности и команды —
@@ -185,4 +185,4 @@ uv run pytest
 
 [GNU AGPL-3.0](LICENSE), © Indalo. Код можно запускать и менять, но если вы даёте доступ к
 изменённой версии по сети, её исходный код нужно открыть пользователям. Ядро
-[`yougile-mcp`](https://github.com/indalo-tech/yougile-mcp) — под MIT.
+[`yougile-mcp`](https://github.com/pxall/yougile-mcp) — под MIT.

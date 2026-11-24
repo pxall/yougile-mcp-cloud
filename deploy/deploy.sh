@@ -3,7 +3,7 @@
 #
 #   ssh deploy@host "<image tag> <sha256 of deploy/compose.yaml> <sha256 of deploy/yougile.caddy>"
 #
-# Deploys ghcr.io/indalo-tech/yougile-mcp-cloud:<tag> with the compose.yaml installed next to this
+# Deploys ghcr.io/pxall/yougile-mcp-cloud:<tag> with the compose.yaml installed next to this
 # script and rolls back to the previous tag if the new containers do not become healthy.
 # compose.yaml and the Caddy site block are installed by hand (README.md): a leaked CI key can
 # choose which build of the image runs, not what runs on this host or with which privileges.
@@ -44,7 +44,7 @@ if ! docker compose pull --quiet app; then
 fi
 if docker compose up -d --remove-orphans --wait --wait-timeout 120; then
     docker image prune -f \
-        --filter "label=org.opencontainers.image.source=https://github.com/indalo-tech/yougile-mcp-cloud" \
+        --filter "label=org.opencontainers.image.source=https://github.com/pxall/yougile-mcp-cloud" \
         >/dev/null
     docker compose ps --format '{{.Service}}: {{.Status}}'
     echo "deployed $tag"

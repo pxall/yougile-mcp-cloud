@@ -5,7 +5,7 @@ from __future__ import annotations
 from html import escape
 
 # AGPL: people using the service can always reach the code that runs it.
-SOURCE = "https://github.com/indalo-tech/yougile-mcp-cloud"
+SOURCE = "https://github.com/pxall/yougile-mcp-cloud"
 
 CSS = """
 :root{--bg:#f6f7f9;--card:#fff;--text:#1d2330;--muted:#5d6675;--line:#dfe3ea;--accent:#2f6fed;

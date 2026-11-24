@@ -19,7 +19,7 @@ RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --locked --no-dev --no-editable
 
 FROM python:3.14-slim
-LABEL org.opencontainers.image.source="https://github.com/indalo-tech/yougile-mcp-cloud" \
+LABEL org.opencontainers.image.source="https://github.com/pxall/yougile-mcp-cloud" \
       org.opencontainers.image.description="Hosted YouGile MCP: sign in with YouGile, per-company limits and rights" \
       org.opencontainers.image.licenses="AGPL-3.0-only"
 # The system CA store is what the app trusts (httpx2 via truststore). The October 2026 eMudhra
